@@ -28,5 +28,5 @@
               vlan: 10
         state: merged
 - name: save running to start-config when modified
-      ios_config:
-        save_when: modified
+  ios_config:
+    save_when: modified
