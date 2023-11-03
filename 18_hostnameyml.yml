@@ -8,9 +8,12 @@
 
 # Merged play:
 # ------------
-
 - name: Apply the provided configuration
   cisco.ios.ios_hostname:
-    config:
-      hostname: Router1
-    state: merged
+  hosts: All
+  tasks:
+    - cisco.ios.ios_hostname:
+       config:
+        hostname: Switch
+      state: merged
+        var: ansible_facts
