@@ -30,7 +30,7 @@
             access:
               vlan: 102
         state: merged
-- name: IOS Config Demo
+- name: Interface Configuration
   hosts: all
   tasks:
 ################### IP Config Merged ##############
