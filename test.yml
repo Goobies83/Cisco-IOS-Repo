@@ -28,7 +28,7 @@
         config:
           - name: Ethernet3/3
             access:
-              vlan: 101
+              vlan: 102
         state: merged
 - name: Save Config
   hosts: all
