@@ -19,6 +19,14 @@
             vlan_id: 103
         state: merged
       register: vln
+  tasks:
+    - name: Configure Access
+      ios_l2_interfaces:
+        config:
+          - name: Ethernet3/3
+            access:
+              vlan: 10
+        state: merged
 - name: save running to start-config when modified
       ios_config:
         save_when: modified
