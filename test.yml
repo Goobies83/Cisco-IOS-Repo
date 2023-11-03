@@ -30,11 +30,3 @@
             access:
               vlan: 102
         state: merged
-- name: Save Config
-  hosts: all
-
-  tasks:
-    ########## Configure Interface
-    - name: Save Config
-      ios_config:
-       save_when: modified
