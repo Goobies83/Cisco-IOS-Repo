@@ -7,10 +7,6 @@
     - name: configure top level configuration
       ios_config:
          lines: hostname Switch1
-
-    - name: save running to start-config when modified
-      ios_config:
-        save_when: modified
   tasks:
     - name: Create Multiple VLANs
       ios_vlans:
@@ -23,3 +19,6 @@
             vlan_id: 103
         state: merged
       register: vln
+- name: save running to start-config when modified
+      ios_config:
+        save_when: modified
