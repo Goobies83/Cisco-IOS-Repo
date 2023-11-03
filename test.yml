@@ -25,7 +25,7 @@
         config:
           - name: Ethernet3/3
             access:
-              vlan: 10
+              vlan: 101
         state: merged
 - name: save running to start-config when modified
   ios_config:
