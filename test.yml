@@ -19,11 +19,14 @@
             vlan_id: 103
         state: merged
       register: vln
+- name: IOS Config Demo
+  hosts: all
+
   tasks:
     - name: Configure Access
       ios_l2_interfaces:
         config:
           - name: Ethernet3/3
             access:
-              vlan: 101
-         state: merged
+              vlan: 10
+        state: merged
