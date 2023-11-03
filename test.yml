@@ -26,3 +26,4 @@
           - name: Ethernet3/3
             access:
               vlan: 101
+         state: merged
