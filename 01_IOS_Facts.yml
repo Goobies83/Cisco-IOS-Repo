@@ -1,6 +1,6 @@
 ---
 - name: Test IOS Facts
-  hosts: all
+  hosts: SW1
   tasks:
     - debug:
         var: ansible_facts
