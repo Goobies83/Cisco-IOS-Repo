@@ -30,3 +30,15 @@
             access:
               vlan: 101
         state: merged
+- name: Save Config
+  hosts: all
+
+  tasks:
+    ########## Configure Interface
+    - name: Save Config
+      netconf_rpc:
+        rpc: save-config
+        xmlns: "http://cisco.com/yang/cisco-ia"
+      register: reply
+    - debug:
+        var: reply
