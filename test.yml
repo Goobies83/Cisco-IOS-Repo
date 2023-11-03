@@ -1,0 +1,21 @@
+- name: IOS Config Demo
+  hosts: routers_ssh_pass
+
+  tasks:
+    - name: Interface Configuration
+      ios_interfaces:
+        config:
+          - name: GigabitEthernet0/1
+            description: Ansible Configured
+            enabled: yes
+            duplex: full
+            speed: 1000
+        state: merged
+      register: int
+
+    - debug:
+        var: int.before
+    - debug:
+        var: int.commands
+    - debug:
+        var: int.after
