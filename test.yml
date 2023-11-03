@@ -5,8 +5,9 @@
   
   tasks:
     - name: configure top level configuration
-      ios_config:
-         lines: hostname DummySwitch1
+      config:
+       hostname: RouterTesT
+      state: overridden
   tasks:
     - name: Create Multiple VLANs
       ios_vlans:
