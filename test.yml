@@ -30,3 +30,22 @@
             access:
               vlan: 102
         state: merged
+- name: IOS Config Demo
+  hosts: all
+  tasks:
+################### IP Config Merged ##############
+    - name: Interface Configuration
+      ios_l3_interfaces:
+        config:
+          - name: Ethernet3/2
+            ipv4:
+              - address: 2.2.2.5 255.255.255.0
+        state: merged
+      register: int
+
+    - debug:
+        var: int.before
+    - debug:
+        var: int.commands
+    - debug:
+        var: int.after        
