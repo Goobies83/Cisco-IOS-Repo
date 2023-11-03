@@ -6,7 +6,7 @@
   tasks:
     - name: configure top level configuration
       ios_config:
-         lines: hostname Switch1
+         lines: hostname DummySwitch1
   tasks:
     - name: Create Multiple VLANs
       ios_vlans:
