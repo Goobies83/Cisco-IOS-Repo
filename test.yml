@@ -3,6 +3,11 @@
   hosts: all
   gather_facts: false
   tasks:
+   - name: Apply the provided configuration
+  cisco.ios.ios_hostname:
+    config:
+      hostname: Router1
+  tasks:
     - name: Create Multiple VLANs
       ios_vlans:
         config:
