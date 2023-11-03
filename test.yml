@@ -26,6 +26,3 @@
           - name: Ethernet3/3
             access:
               vlan: 101
-- name: save running to start-config when modified
-  ios_config:
-     save_when: modified
