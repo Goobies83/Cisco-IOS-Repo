@@ -26,7 +26,6 @@
           - name: Ethernet3/3
             access:
               vlan: 101
-tasks:
-  - name: save running to start-config when modified
-    ios_config:
+- name: save running to start-config when modified
+  ios_config:
      save_when: modified
