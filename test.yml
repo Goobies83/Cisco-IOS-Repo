@@ -1,21 +1,13 @@
-- name: IOS Config Demo
-  hosts: routers_ssh_pass
-
+---
+- name: Change hostname
+  hosts: all
+  gather_facts: false
+  
   tasks:
-    - name: Interface Configuration
-      ios_interfaces:
-        config:
-          - name: GigabitEthernet0/1
-            description: Ansible Configured
-            enabled: yes
-            duplex: full
-            speed: 1000
-        state: merged
-      register: int
+    - name: configure top level configuration
+      ios_config:
+         lines: hostname Switch1
 
-    - debug:
-        var: int.before
-    - debug:
-        var: int.commands
-    - debug:
-        var: int.after
+    - name: save running to start-config when modified
+      ios_config:
+        save_when: modified
